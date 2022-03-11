@@ -1,0 +1,293 @@
+> use assignment
+switched to db assignment
+> db.createCollection("users")
+{ "ok" : 1 }
+> db.users.insert({"first_name":"John","last_name":"Cusack","email":"john@gmail.com","gender":"male","ip_address":"192.168.0.104","age":26})
+WriteResult({ "nInserted" : 1 })
+> db.users.insertMany([{"first_name":"Mick","last_name":"white","email":"mick@gmail.com","gender":"male","ip_address":"192.168.0.104","age":25},
+... {"first_name":"Chris","last_name":"evans","email":"chris@gmail.com","gender":"male","ip_address":"192.168.0.104","age":21},
+... {"first_name":"Jason","last_name":"stathom","email":"jason@gmail.com","gender":"male","ip_address":"192.168.0.104","age":20},
+... {"first_name":"Will","last_name":"smith","email":"@gmail.com","gender":"male","ip_address":"192.168.0.104","age":26},
+... {"first_name":"Dwayne","last_name":"Johnson","email":"dwayne@gmail.com","gender":"male","ip_address":"192.168.0.104","age":28},
+... {"first_name":"Ben","last_name":"stiller","email":"ben@gmail.com","gender":"male","ip_address":"192.168.0.104","age":30}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62276483c2900b9a6d623230"),
+                ObjectId("62276483c2900b9a6d623231"),
+                ObjectId("62276483c2900b9a6d623232"),
+                ObjectId("62276483c2900b9a6d623233"),
+                ObjectId("62276483c2900b9a6d623234"),
+                ObjectId("62276483c2900b9a6d623235")
+        ]
+}
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("62276324c2900b9a6d62322f"),
+        "first_name" : "John",
+        "last_name" : "Cusack",
+        "email" : "john@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 26,
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623230"),
+        "first_name" : "Mick",
+        "last_name" : "white",
+        "email" : "mick@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623231"),
+        "first_name" : "Chris",
+        "last_name" : "evans",
+        "email" : "chris@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623232"),
+        "first_name" : "Jason",
+        "last_name" : "stathom",
+        "email" : "jason@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 20
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623233"),
+        "first_name" : "Will",
+        "last_name" : "smith",
+        "email" : "@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623234"),
+        "first_name" : "Dwayne",
+        "last_name" : "Johnson",
+        "email" : "dwayne@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 28
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623235"),
+        "first_name" : "Ben",
+        "last_name" : "stiller",
+        "email" : "ben@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 30
+}
+> db.users.findOne({"_id": ObjectId("62276324c2900b9a6d62322f")})
+{
+        "_id" : ObjectId("62276324c2900b9a6d62322f"),
+        "first_name" : "John",
+        "last_name" : "Cusack",
+        "email" : "john@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 26
+}
+> db.users.update({"first_name":"Ben"},{$set:{"city":"Jaipur"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("62276324c2900b9a6d62322f"),
+        "first_name" : "John",
+        "last_name" : "Cusack",
+        "email" : "john@gmail.com",
+        "gender" : "female",
+        "ip_address" : "192.168.0.104",
+        "age" : 26,
+        "nick_name" : "JAVA"
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623230"),
+        "first_name" : "Mick",
+        "last_name" : "white",
+        "email" : "mick@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623231"),
+        "first_name" : "Chris",
+        "last_name" : "evans",
+        "email" : "chris@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623232"),
+        "first_name" : "Jason",
+        "last_name" : "stathom",
+        "email" : "jason@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 20
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623233"),
+        "first_name" : "Will",
+        "last_name" : "smith",
+        "email" : "@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 26
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623234"),
+        "first_name" : "Dwayne",
+        "last_name" : "Johnson",
+        "email" : "dwayne@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 28
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623235"),
+        "first_name" : "Ben",
+        "last_name" : "stiller",
+        "email" : "ben@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 30,
+        "city" : "Jaipur"
+}
+> db.users.updateMany({"age":26},{$set:{"nick_name":"Javascript"}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("62276324c2900b9a6d62322f"),
+        "first_name" : "John",
+        "last_name" : "Cusack",
+        "email" : "john@gmail.com",
+        "gender" : "female",
+        "ip_address" : "192.168.0.104",
+        "age" : 26,
+        "nick_name" : "Javascript"
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623230"),
+        "first_name" : "Mick",
+        "last_name" : "white",
+        "email" : "mick@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623231"),
+        "first_name" : "Chris",
+        "last_name" : "evans",
+        "email" : "chris@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623232"),
+        "first_name" : "Jason",
+        "last_name" : "stathom",
+        "email" : "jason@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 20
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623233"),
+        "first_name" : "Will",
+        "last_name" : "smith",
+        "email" : "@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 26,
+        "nick_name" : "Javascript"
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623234"),
+        "first_name" : "Dwayne",
+        "last_name" : "Johnson",
+        "email" : "dwayne@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 28
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623235"),
+        "first_name" : "Ben",
+        "last_name" : "stiller",
+        "email" : "ben@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 30,
+        "city" : "Jaipur"
+}
+> db.users.deleteOne({"age":20})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("62276324c2900b9a6d62322f"),
+        "first_name" : "John",
+        "last_name" : "Cusack",
+        "email" : "john@gmail.com",
+        "gender" : "female",
+        "ip_address" : "192.168.0.104",
+        "age" : 26,
+        "nick_name" : "Javascript"
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623230"),
+        "first_name" : "Mick",
+        "last_name" : "white",
+        "email" : "mick@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 25
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623231"),
+        "first_name" : "Chris",
+        "last_name" : "evans",
+        "email" : "chris@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623233"),
+        "first_name" : "Will",
+        "last_name" : "smith",
+        "email" : "@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 26,
+        "nick_name" : "Javascript"
+}
+{
+        "_id" : ObjectId("62276483c2900b9a6d623235"),
+        "first_name" : "Ben",
+        "last_name" : "stiller",
+        "email" : "ben@gmail.com",
+        "gender" : "male",
+        "ip_address" : "192.168.0.104",
+        "age" : 30,
+        "city" : "Jaipur"
+}
+
+
+> db.users.deleteMany({"age":26})
+
+
+// delete database
+>db.dropDatabase()
+
