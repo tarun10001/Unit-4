@@ -1,0 +1,352 @@
+> use movies
+switched to db movies
+> db.movies.find({})
+{ "_id" : ObjectId("622d76d1a43e06dbfe09932d"), "movie_name" : "At Close Range", "movie_genre" : "Crime|Drama", "production_year" : 2000, "budget" : 9000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09932e"), "movie_name" : "Tali-Ihantala 1944", "movie_genre" : "Action|Drama|War", "production_year" : 1994, "budget" : 11000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09932f"), "movie_name" : "Vermont Is For Lovers", "movie_genre" : "Comedy|Documentary|Romance", "production_year" : 2002, "budget" : 12000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099330"), "movie_name" : "Judith of Bethulia", "movie_genre" : "Adventure|Drama|Romance", "production_year" : 2003, "budget" : 13000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099331"), "movie_name" : "Highlander: The Source", "movie_genre" : "Action|Adventure|Fantasy|Sci-Fi", "production_year" : 2004, "budget" : 14000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099332"), "movie_name" : "Hurricane, The", "movie_genre" : "Drama", "production_year" : 2005, "budget" : 15000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099333"), "movie_name" : "Artist, The", "movie_genre" : "Drama|Romance", "production_year" : 2006, "budget" : 16000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099334"), "movie_name" : "New Jersey Drive", "movie_genre" : "Crime|Drama", "production_year" : 2007, "budget" : 17000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099335"), "movie_name" : "Fantastic Mr. Fox", "movie_genre" : "Adventure|Animation|Children|Comedy|Crime", "production_year" : 2008, "budget" : 18000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099336"), "movie_name" : "What Happens in Vegas...", "movie_genre" : "Comedy|Romance", "production_year" : 2009, "budget" : 19000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099337"), "movie_name" : "Project Grizzly", "movie_genre" : "Documentary", "production_year" : 2010, "budget" : 20000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099338"), "movie_name" : "Go", "movie_genre" : "Comedy|Crime", "production_year" : 2011, "budget" : 10000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099339"), "movie_name" : "Bloody Sunday", "movie_genre" : "Drama", "production_year" : 2011, "budget" : 10000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09933a"), "movie_name" : "All Blossoms Again: Pedro Costa, Director (Tout refleurit: Pedro Costa, cinéaste)", "movie_genre" : "Documentary", "production_year" : 2010, "budget" : 10000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09933b"), "movie_name" : "Ghost and the Darkness, The", "movie_genre" : "Action|Adventure", "production_year" : 2008, "budget" : 12000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09933c"), "movie_name" : "Ice-Cold in Alex", "movie_genre" : "Adventure|Drama|War", "production_year" : 2015, "budget" : 16000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09933d"), "movie_name" : "I've Loved You So Long (Il y a longtemps que je t'aime)", "movie_genre" : "Drama|Mystery", "production_year" : 2013, "budget" : 13000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09933e"), "movie_name" : "Billy Madison", "movie_genre" : "Comedy", "production_year" : 2014, "budget" : 17000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe09933f"), "movie_name" : "Tale of the Mummy", "movie_genre" : "Adventure|Fantasy|Horror", "production_year" : 1995, "budget" : 15000 }
+{ "_id" : ObjectId("622d76d1a43e06dbfe099340"), "movie_name" : "Kickboxer 3: The Art of War (Kickboxer III: The Art of War)", "movie_genre" : "Action|Thriller", "production_year" : 2003, "budget" : 13000 }
+Type "it" for more
+> db.movies.find({movie_name:{$eq:"Tale of the Mummy"}}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933f"),
+        "movie_name" : "Tale of the Mummy",
+        "movie_genre" : "Adventure|Fantasy|Horror",
+        "production_year" : 1995,
+        "budget" : 15000
+}
+> db.movies.find({movie_name:{$ne:"Tale of the Mummy"}}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09932d"),
+        "movie_name" : "At Close Range",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2000,
+        "budget" : 9000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09932e"),
+        "movie_name" : "Tali-Ihantala 1944",
+        "movie_genre" : "Action|Drama|War",
+        "production_year" : 1994,
+        "budget" : 11000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09932f"),
+        "movie_name" : "Vermont Is For Lovers",
+        "movie_genre" : "Comedy|Documentary|Romance",
+        "production_year" : 2002,
+        "budget" : 12000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099330"),
+        "movie_name" : "Judith of Bethulia",
+        "movie_genre" : "Adventure|Drama|Romance",
+        "production_year" : 2003,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099340"),
+        "movie_name" : "Kickboxer 3: The Art of War (Kickboxer III: The Art of War)",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2003,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099341"),
+        "movie_name" : "Sound of the Mountain (Thunder of the Mountain, The) (Yama no oto)",
+        "movie_genre" : "Drama",
+        "production_year" : null,
+        "budget" : null
+}
+Type "it" for more
+> db.movies.find({budget:{$gt:19000}}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099337"),
+        "movie_name" : "Project Grizzly",
+        "movie_genre" : "Documentary",
+        "production_year" : 2010,
+        "budget" : 20000
+}
+> db.movies.find({budget:{$gte:19000}}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099336"),
+        "movie_name" : "What Happens in Vegas...",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2009,
+        "budget" : 19000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099337"),
+        "movie_name" : "Project Grizzly",
+        "movie_genre" : "Documentary",
+        "production_year" : 2010,
+        "budget" : 20000
+}
+> db.movies.find({budget:{$lt:11000}}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09932d"),
+        "movie_name" : "At Close Range",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2000,
+        "budget" : 9000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099338"),
+        "movie_name" : "Go",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2011,
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099339"),
+        "movie_name" : "Bloody Sunday",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933a"),
+        "movie_name" : "All Blossoms Again: Pedro Costa, Director (Tout refleurit: Pedro Costa, cinéaste)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2010,
+        "budget" : 10000
+}
+> db.movies.find({budget:{$lte:10000}}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09932d"),
+        "movie_name" : "At Close Range",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2000,
+        "budget" : 9000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099338"),
+        "movie_name" : "Go",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2011,
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099339"),
+        "movie_name" : "Bloody Sunday",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933a"),
+        "movie_name" : "All Blossoms Again: Pedro Costa, Director (Tout refleurit: Pedro Costa, cinéaste)",
+        "movie_genre" : "Documentary",
+        "production_year" : 2010,
+        "budget" : 10000
+}
+> db.movies.find({$and:[{budget:{$gt:18000}},{production_year:{$gt:2000}}]}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099336"),
+        "movie_name" : "What Happens in Vegas...",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2009,
+        "budget" : 19000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099337"),
+        "movie_name" : "Project Grizzly",
+        "movie_genre" : "Documentary",
+        "production_year" : 2010,
+        "budget" : 20000
+}
+> db.movies.find({$or:[{budget:{$gt:18000}},{production_year:{$gt:2012}}]}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099336"),
+        "movie_name" : "What Happens in Vegas...",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2009,
+        "budget" : 19000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099337"),
+        "movie_name" : "Project Grizzly",
+        "movie_genre" : "Documentary",
+        "production_year" : 2010,
+        "budget" : 20000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933c"),
+        "movie_name" : "Ice-Cold in Alex",
+        "movie_genre" : "Adventure|Drama|War",
+        "production_year" : 2015,
+        "budget" : 16000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933d"),
+        "movie_name" : "I've Loved You So Long (Il y a longtemps que je t'aime)",
+        "movie_genre" : "Drama|Mystery",
+        "production_year" : 2013,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933e"),
+        "movie_name" : "Billy Madison",
+        "movie_genre" : "Comedy",
+        "production_year" : 2014,
+        "budget" : 17000
+}
+> db.movies.find({$nor:[{budget:{$gt:19000}},{production_year:{$gt:2012}}]}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09932f"),
+        "movie_name" : "Vermont Is For Lovers",
+        "movie_genre" : "Comedy|Documentary|Romance",
+        "production_year" : 2002,
+        "budget" : 12000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099330"),
+        "movie_name" : "Judith of Bethulia",
+        "movie_genre" : "Adventure|Drama|Romance",
+        "production_year" : 2003,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099331"),
+        "movie_name" : "Highlander: The Source",
+        "movie_genre" : "Action|Adventure|Fantasy|Sci-Fi",
+        "production_year" : 2004,
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099332"),
+        "movie_name" : "Hurricane, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 15000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099333"),
+        "movie_name" : "Artist, The",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2006,
+        "budget" : 16000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933c"),
+        "movie_name" : "Ice-Cold in Alex",
+        "movie_genre" : "Adventure|Drama|War",
+        "production_year" : 2015,
+        "budget" : 16000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933d"),
+        "movie_name" : "I've Loved You So Long (Il y a longtemps que je t'aime)",
+        "movie_genre" : "Drama|Mystery",
+        "production_year" : 2013,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099340"),
+        "movie_name" : "Kickboxer 3: The Art of War (Kickboxer III: The Art of War)",
+        "movie_genre" : "Action|Thriller",
+        "production_year" : 2003,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099341"),
+        "movie_name" : "Sound of the Mountain (Thunder of the Mountain, The) (Yama no oto)",
+        "movie_genre" : "Drama",
+        "production_year" : null,
+        "budget" : null
+}
+> db.movies.find({$and:[{production_year:{$gte:2000}},{production_year:{$lte:2000}}]}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09932d"),
+        "movie_name" : "At Close Range",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2000,
+        "budget" : 9000
+}
+> db.movies.find({}).sort({production_year: -1},{movie_name: 1}).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933c"),
+        "movie_name" : "Ice-Cold in Alex",
+        "movie_genre" : "Adventure|Drama|War",
+        "production_year" : 2015,
+        "budget" : 16000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933e"),
+        "movie_name" : "Billy Madison",
+        "movie_genre" : "Comedy",
+        "production_year" : 2014,
+        "budget" : 17000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe09933d"),
+        "movie_name" : "I've Loved You So Long (Il y a longtemps que je t'aime)",
+        "movie_genre" : "Drama|Mystery",
+        "production_year" : 2013,
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099338"),
+        "movie_name" : "Go",
+        "movie_genre" : "Comedy|Crime",
+        "production_year" : 2011,
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099339"),
+        "movie_name" : "Bloody Sunday",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10000
+}
+> db.movies.find({}).sort({production_year: -1},{movie_name: 1}).skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099334"),
+        "movie_name" : "New Jersey Drive",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2007,
+        "budget" : 17000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099333"),
+        "movie_name" : "Artist, The",
+        "movie_genre" : "Drama|Romance",
+        "production_year" : 2006,
+        "budget" : 16000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099332"),
+        "movie_name" : "Hurricane, The",
+        "movie_genre" : "Drama",
+        "production_year" : 2005,
+        "budget" : 15000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099331"),
+        "movie_name" : "Highlander: The Source",
+        "movie_genre" : "Action|Adventure|Fantasy|Sci-Fi",
+        "production_year" : 2004,
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("622d76d1a43e06dbfe099330"),
+        "movie_name" : "Judith of Bethulia",
+        "movie_genre" : "Adventure|Drama|Romance",
+        "production_year" : 2003,
+        "budget" : 13000
+}
