@@ -14,7 +14,7 @@ let data = [
     {
         book : "The Lovely Bones",
         author : "Alice Sebold",
-        genre : "Mystery",
+        genre : "Mystery and Fictional",
     }
 ];
 
